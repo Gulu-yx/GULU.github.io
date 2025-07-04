@@ -1,0 +1,569 @@
+<!-- 变量定义（颜色、字体等） -->
+<!--
+主色: #8E6FF7
+背景色: #121212
+白色: #FFFFFF
+灰色: #9CA3AF
+副背景: #1F2937
+副白色: #F9FAFB
+字体: Roboto, YouSheBiaoTiHei
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440">
+  <title>何依璇 - 设计作品集</title>
+  <style>
+    body {
+      margin: 0;
+      background: #121212;
+      font-family: 'Roboto', 'YouSheBiaoTiHei', Arial, sans-serif;
+      color: #fff;
+    }
+    .nav {
+      width: 100%;
+      height: 69px;
+      background: rgba(18,18,18,0.95);
+      border-bottom: 1px dashed #1F2937;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav .logo {
+      font-family: 'YouSheBiaoTiHei', 'Roboto', sans-serif;
+      font-size: 30px;
+      font-weight: bold;
+      color: #8E6FF7;
+      letter-spacing: 2px;
+    }
+    .nav .menu {
+      display: flex;
+      gap: 32px;
+    }
+    .nav .menu a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 0 8px;
+      position: relative;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+    .nav .menu a:hover {
+      color: #8E6FF7;
+    }
+    .hidden { display: none !important; }
+    .banner {
+      width: 100%;
+      height: 600px;
+      background: url('https://image-resource.mastergo.com/159566874801357/159566874801362/d7fd90938ea07ea98bb19b31de4716a0.png') center/cover no-repeat;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 96px;
+      margin-bottom: 64px;
+    }
+    .banner-content {
+      background: linear-gradient(90deg, #121212 0%, rgba(0,0,0,0) 100%);
+      padding: 64px;
+      border-radius: 16px;
+      max-width: 700px;
+    }
+    .banner-title {
+      font-size: 64px;
+      font-weight: bold;
+      line-height: 86px;
+      color: #fff;
+      margin-bottom: 32px;
+      white-space: pre-line;
+    }
+    .banner-desc {
+      font-size: 20px;
+      color: #D1D5DB;
+      margin-bottom: 32px;
+    }
+    .banner-btn {
+      display: inline-block;
+      background: #8E6FF7;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 12px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .banner-btn:hover {
+      background: #6c4fd3;
+    }
+    .section {
+      width: 1376px;
+      margin: 0 auto 64px auto;
+      padding: 0 32px;
+    }
+    .section-title {
+      font-size: 30px;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 32px;
+    }
+    .works-list {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    .work-card {
+      background: #1F2937;
+      border-radius: 16px;
+      overflow: hidden;
+      width: 437px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
+    }
+    .work-card:hover {
+      box-shadow: 0 4px 16px #8E6FF7;
+    }
+    .work-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+    .work-card-content {
+      padding: 16px;
+    }
+    .work-card-title {
+      font-size: 18px;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .work-card-desc {
+      font-size: 16px;
+      color: #9CA3AF;
+    }
+    .tags {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .tag {
+      background: rgba(142,111,247,0.2);
+      color: #fff;
+      border: 1px dashed #8E6FF7;
+      border-radius: 9999px;
+      padding: 8px 16px;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+    .about {
+      display: flex;
+      gap: 48px;
+      margin-bottom: 64px;
+      align-items: flex-start;
+    }
+    .about-img {
+      width: 443px;
+      height: 432px;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+    .about-content {
+      flex: 1;
+    }
+    .about-title {
+      font-size: 24px;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+    .about-desc {
+      font-size: 16px;
+      color: #D1D5DB;
+      margin-bottom: 24px;
+    }
+    .about-skills {
+      margin-bottom: 24px;
+    }
+    .about-skills-title {
+      font-size: 18px;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .about-skills-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .about-skills-list li {
+      font-size: 16px;
+      color: #D1D5DB;
+      margin-bottom: 8px;
+    }
+    .contact {
+      background: #1F2937;
+      border-radius: 16px;
+      padding: 48px 32px;
+      width: 1376px;
+      margin: 0 auto 64px auto;
+      color: #fff;
+    }
+    .contact-title {
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 32px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      max-width: 664px;
+    }
+    .contact-form label {
+      font-size: 14px;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1px dashed rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-size: 16px;
+      outline: none;
+      resize: none;
+    }
+    .contact-form button {
+      width: 160px;
+      padding: 12px 0;
+      background: #8E6FF7;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: 16px;
+      transition: background 0.2s;
+    }
+    .contact-form button:hover {
+      background: #6c4fd3;
+    }
+    .contact-info {
+      margin-top: 48px;
+      font-size: 16px;
+      color: #D1D5DB;
+    }
+    @media (max-width: 1440px) {
+      .section, .contact {
+        width: 100%;
+        min-width: 320px;
+        box-sizing: border-box;
+      }
+    }
+    /* 作品详情页样式 */
+    .detail-main {
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 64px 0 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+    }
+    .work-block {
+      position: relative;
+      margin: 0 auto;
+      width: 900px;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .work-bg {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border-radius: 60px;
+      background: #8E6FF7;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+    }
+    .work-img {
+      position: relative;
+      z-index: 2;
+      margin-top: 40px;
+      border-radius: 41px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+      width: 808px;
+      height: 517px;
+      object-fit: cover;
+      background: #fff;
+      display: block;
+    }
+    .work-title {
+      position: relative;
+      z-index: 3;
+      margin-top: 32px;
+      font-size: 48px;
+      color: #fff;
+      text-align: center;
+      font-weight: 400;
+      background: none;
+    }
+    .back-btn {
+      display: inline-block;
+      margin: 32px auto 0 auto;
+      background: #8E6FF7;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 12px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+    .back-btn:hover {
+      background: #6c4fd3;
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="nav">
+    <div class="logo">何依璇</div>
+    <div class="menu">
+      <a href="#home" onclick="showPage('home')">首页</a>
+      <a href="#works" onclick="showPage('home')">作品集</a>
+      <a href="#about" onclick="showPage('home')">关于我</a>
+      <a href="#contact" onclick="showPage('home')">联系</a>
+    </div>
+  </nav>
+
+  <!-- 首页内容 -->
+  <div id="home-page">
+    <section class="banner" id="home">
+      <div class="banner-content">
+        <div class="banner-title">白昼结构世界\n夜晚重组美学</div>
+        <div class="banner-desc">专注于视觉设计与创意表达，打造独特的品牌体验</div>
+        <a class="banner-btn" href="#works">查看作品集</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">精选作品</div>
+      <div class="works-list">
+        <div class="work-card">
+          <img src="https://image-resource.mastergo.com/159566874801357/159566874801362/171827842403561cb722ff15986bb350.jpg" alt="精选作品1">
+        </div>
+        <div class="work-card">
+          <img src="https://image-resource.mastergo.com/159566874801357/159566874801362/e8114306dab92ffd8d6d3c0f6fe64c36.png" alt="精选作品2">
+        </div>
+        <div class="work-card">
+          <img src="https://image-resource.mastergo.com/159566874801357/159566874801362/c6dc2da04ec3d14455e3cff2c2ad4c4e.jpg" alt="精选作品3">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">技能标签</div>
+      <div class="tags">
+        <span class="tag">品牌设计</span>
+        <span class="tag">UI/UX</span>
+        <span class="tag">3D 建模</span>
+        <span class="tag">动效设计</span>
+        <span class="tag">插画设计</span>
+        <span class="tag">摄影创作</span>
+      </div>
+    </section>
+
+    <section class="section" id="works">
+      <div class="section-title">作品集</div>
+      <div class="works-list">
+        <div class="work-card" onclick="showPage('3d')">
+          <img src="https://image-resource.mastergo.com/159566874801357/159566874801362/06e0331e2b2fe7aa1646af383dc14761.png" alt="3D建模作品">
+          <div class="work-card-content">
+            <div class="work-card-title">3D建模作品</div>
+            <div class="work-card-desc">平时作业以及个人创作</div>
+          </div>
+        </div>
+        <div class="work-card" onclick="showPage('graphic')">
+          <img src="https://image-resource.mastergo.com/159566874801357/159566874801362/77e50cb578e9d258c9a83144796a2961.png" alt="平面展示作品">
+          <div class="work-card-content">
+            <div class="work-card-title">平面展示作品</div>
+            <div class="work-card-desc">原创平面海报展现作品设计</div>
+          </div>
+        </div>
+        <div class="work-card" onclick="showPage('motion')">
+          <img src="https://image-resource.mastergo.com/159566874801357/159566874801362/af92097f6b072328077a914518fa1339.png" alt="动态视频作品">
+          <div class="work-card-content">
+            <div class="work-card-title">动态视频作品</div>
+            <div class="work-card-desc">创意动效及视觉特效制作</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <img class="about-img" src="https://image-resource.mastergo.com/159566874801357/159566874801362/446883658c7f863ddca59b6a13a07de4.png" alt="何依璇">
+      <div class="about-content">
+        <div class="about-title">何依璇</div>
+        <div class="about-desc">来自北京工商大学数字媒体专业学生，专注于设计的学习。热衷将创意与技术结合。作品集收录过往作品，展现我的成长与风格，期待与你分享创作中的思考与成果。</div>
+        <div class="about-skills">
+          <div class="about-skills-title">专业技能</div>
+          <ul class="about-skills-list">
+            <li>• 擅长许多设计软件如：PS,AI,AE,BLANDER,MAYA,PIXSO,PROCESSING等。</li>
+            <li>• UI/UX 设计</li>
+            <li>• 3D 建模与渲染</li>
+            <li>• 动效设计</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-title">联系我</div>
+      <form class="contact-form">
+        <label for="name">姓名</label>
+        <input id="name" name="name" type="text" placeholder="请输入您的姓名" required>
+        <label for="email">邮箱</label>
+        <input id="email" name="email" type="email" placeholder="请输入您的邮箱" required>
+        <label for="message">留言内容</label>
+        <textarea id="message" name="message" rows="5" placeholder="请输入您的留言" required></textarea>
+        <button type="submit">发送消息</button>
+      </form>
+      <div class="contact-info">
+        <div>邮箱：contact@example.com</div>
+        <div>微信：设计师小陈</div>
+        <div>地址：北京市朝阳区</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- 3D建模作品详情页 -->
+  <div id="detail-3d" class="hidden">
+    <main class="detail-main">
+      <section class="work-block">
+        <div class="work-bg"></div>
+        <img class="work-img" src="https://image-resource.mastergo.com/159566874801357/159566874801362/06e0331e2b2fe7aa1646af383dc14761.png" alt="3D建模作品">
+        <div class="work-title">3D建模作品</div>
+      </section>
+      <section class="work-block">
+        <div class="work-bg"></div>
+        <img class="work-img" src="https://image-resource.mastergo.com/159566874801357/159566874801362/171827842403561cb722ff15986bb350.jpg" alt="字母农业小城">
+        <div class="work-title">字母农业小城</div>
+      </section>
+      <section class="work-block">
+        <div class="work-bg"></div>
+        <img class="work-img" src="https://image-resource.mastergo.com/159566874801357/159566874801362/53d03f5f30da195d02419de265611bd6.jpg" alt="中医日历设计">
+        <div class="work-title">中医日历设计</div>
+      </section>
+      <section class="work-block">
+        <div class="work-bg"></div>
+        <img class="work-img" src="https://image-resource.mastergo.com/159566874801357/159566874801362/a1bd6d67f0cb4fed2ccc947abd947c9b.png" alt="珍珠耳环少女练习">
+        <div class="work-title">珍珠耳环少女练习</div>
+      </section>
+      <button class="back-btn" onclick="showPage('home')">返回首页</button>
+    </main>
+  </div>
+
+  <!-- 平面展示作品详情页 -->
+  <div id="detail-graphic" class="hidden">
+    <main class="detail-main">
+      <section class="work-block">
+        <div class="work-bg"></div>
+        <img class="work-img" src="https://image-resource.mastergo.com/159566874801357/159566874801362/1aec57c2e98376367c1068845c12255b.png" alt="扑克牌文创设计">
+        <div class="work-title">扑克牌文创设计</div>
+      </section>
+      <section class="work-block">
+        <div class="work-bg"></div>
+        <img class="work-img" src="https://image-resource.mastergo.com/159566874801357/159566874801362/211e6f910446d86123fd0688acb3a983.jpg" alt="色彩变换作业">
+        <div class="work-title">色彩变换作业</div>
+      </section>
+      <section class="work-block">
+        <div class="work-bg"></div>
+        <img class="work-img" src="https://image-resource.mastergo.com/159566874801357/159566874801362/5c943931e18a87f10983b7acbb48d562.jpg" alt="邀请函设计">
+        <div class="work-title">邀请函设计</div>
+      </section>
+      <section class="work-block">
+        <div class="work-bg"></div>
+        <img class="work-img" src="https://image-resource.mastergo.com/159566874801357/159566874801362/018149e30fb57d8e83e8014e88b97bfc.jpg" alt="解构与重构">
+        <div class="work-title">解构与重构</div>
+      </section>
+      <section class="work-block">
+        <div class="work-bg"></div>
+        <img class="work-img" src="https://image-resource.mastergo.com/159566874801357/159566874801362/9242283a0d788276ed0804ff6d0ae821.jpg" alt="校园卡套设计">
+        <div class="work-title">校园卡套设计</div>
+      </section>
+      <section class="work-block">
+        <div class="work-bg"></div>
+        <img class="work-img" src="https://image-resource.mastergo.com/159566874801357/159566874801362/af88a017b0b31f3c4c2ba226134b6e81.jpg" alt="美食海报设计">
+        <div class="work-title">美食海报设计</div>
+      </section>
+      <button class="back-btn" onclick="showPage('home')">返回首页</button>
+    </main>
+  </div>
+
+  <!-- 动态视频作品详情页 -->
+  <div id="detail-motion" class="hidden">
+    <main class="detail-main">
+      <section class="work-block">
+        <div class="work-bg"></div>
+        <img class="work-img" src="https://image-resource.mastergo.com/159566874801357/159566874801362/526aa5e97f4d8e6acd4b6ab31d14543e.png" alt="HBN广告">
+        <div class="work-title">HBN广告</div>
+      </section>
+      <section class="work-block">
+        <div class="work-bg"></div>
+        <img class="work-img" src="https://image-resource.mastergo.com/159566874801357/159566874801362/decce2716844e89a7c9c03b8f6facb38.png" alt="点线面练习">
+        <div class="work-title">点线面练习</div>
+      </section>
+      <section class="work-block">
+        <div class="work-bg"></div>
+        <img class="work-img" src="https://image-resource.mastergo.com/159566874801357/159566874801362/b0e285c6c024e96b2af2a92e9e049d7b.png" alt="排列组合练习">
+        <div class="work-title">排列组合练习</div>
+      </section>
+      <section class="work-block">
+        <div class="work-bg"></div>
+        <img class="work-img" src="https://image-resource.mastergo.com/159566874801357/159566874801362/2b3735823b2b344e3db4d6d259cc375e.png" alt="拼贴转场练习">
+        <div class="work-title">拼贴转场练习</div>
+      </section>
+      <button class="back-btn" onclick="showPage('home')">返回首页</button>
+    </main>
+  </div>
+
+  <script>
+    function showPage(page) {
+      document.getElementById('home-page').classList.add('hidden');
+      document.getElementById('detail-3d').classList.add('hidden');
+      document.getElementById('detail-graphic').classList.add('hidden');
+      document.getElementById('detail-motion').classList.add('hidden');
+      if(page === 'home') {
+        document.getElementById('home-page').classList.remove('hidden');
+      } else if(page === '3d') {
+        document.getElementById('detail-3d').classList.remove('hidden');
+      } else if(page === 'graphic') {
+        document.getElementById('detail-graphic').classList.remove('hidden');
+      } else if(page === 'motion') {
+        document.getElementById('detail-motion').classList.remove('hidden');
+      }
+      window.scrollTo(0,0);
+    }
+  </script>
+</body>
+</html>
